@@ -1,29 +1,21 @@
-
-
-function sumAll(firstNumber, secondNumber) {
-  let total = 0;
-  for (i = firstNumber; i <= secondNumber; i++) {
-    total += i;
-  }
-  return total;
-  
-}
-
-
-/*const sumAll = function (min, max) {
-    if (!Number.isInteger(min) || !Number.isInteger(max)) return "ERROR";
-    if (min < 0 || max < 0) return "ERROR";
-    if (min > max) {
-      const temp = min;
-      min = max;
-      max = temp;
-    }
+function sumAll(minNum, maxNum) {
     let sum = 0;
-    for (let i = min; i < max + 1; i++) {
+    if (minNum < 0 || maxNum < 0 || !Number.isInteger(minNum) || !Number.isInteger(maxNum)) {
+        return "ERROR";
+    }
+    if (minNum > maxNum) {
+      for (i = maxNum; i <= minNum; i++) {
+        sum += i;
+        continue;
+      }
+    }
+    for (i = minNum; i <= maxNum; i++) {
       sum += i;
     }
     return sum;
-  };
-*/  
+  }
+  
+
+
 // Do not edit below this line
 module.exports = sumAll;
